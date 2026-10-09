@@ -47,3 +47,46 @@ h2{font-size:clamp(2rem,3.5vw,3.2rem)}.section{padding-top:5rem;padding-bottom:5
 
 /* Terminal links and keyboard-accessible navigation */
 .terminal-output .terminal-link{display:block;width:fit-content;color:#dfbaff;text-decoration:underline;text-underline-offset:3px;margin:.25rem 0 .55rem;font:1rem/1.6 Consolas,'Courier New',monospace}.terminal-output .terminal-link:hover{color:#fff}.terminal-output .terminal-link:focus-visible{outline:2px solid #e7c7ff;outline-offset:3px}
+
+/* Network Operations / Developer Workstation theme. Static, lightweight, and motion-safe. */
+:root{--bg:#0b0b15;--panel:#151526;--panel2:#211c38;--border:#403653;--accent:#bd88ff;--ops-cyan:#85dce7}
+body{background:radial-gradient(circle at 85% 8%,#33204455,transparent 32%),#0b0b15}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(#b875ff09 1px,transparent 1px),linear-gradient(90deg,#b875ff09 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000 0%,transparent 95%)}
+.topbar{border-bottom:1px solid #78609977;background:#0b0b15f2}
+.topbar nav a{font-family:Consolas,'Courier New',monospace;letter-spacing:.015em}
+.topbar nav a:hover{color:var(--ops-cyan)}
+.section>.eyebrow,.section-index,.ops-prompt{font-family:Consolas,'Courier New',monospace;letter-spacing:.14em}
+.section>.eyebrow:before{content:"// ";color:var(--ops-cyan)}
+.hero.hero-with-photo{background:linear-gradient(125deg,#0c0c19ee,#1c1235dd),repeating-linear-gradient(0deg,#a274ed0d 0 1px,transparent 1px 42px);grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr);gap:clamp(2rem,4vw,5rem)}
+.hero.hero-with-photo>div{min-width:0}
+.hero .ops-prompt{color:var(--ops-cyan);font-size:.8rem}
+.hero h1{font-size:clamp(3rem,7vw,7rem)}
+.hero .portrait{border:1px solid #aa81e8;box-shadow:12px 12px 0 #382053,0 0 70px #7b4ab225}
+.ops-dashboard{margin-top:2.5rem;max-width:720px;border:1px solid #8062ac;border-radius:10px;background:#10101eea;box-shadow:0 18px 50px #0006;overflow:hidden}
+.ops-dashboard-head,.ops-dashboard-footer{display:flex;align-items:center;gap:.75rem;padding:.7rem 1rem;background:#231c37;color:#e5d6ff;font:700 .7rem/1.5 Consolas,'Courier New',monospace;letter-spacing:.08em}
+.ops-dot{width:9px;height:9px;border-radius:50%;background:var(--ops-cyan);box-shadow:0 0 12px #85dce788;flex-shrink:0}
+.ops-head-right{margin-left:auto;color:#baa9cf;font-weight:400}
+.ops-dashboard-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.ops-stat{padding:1.1rem .85rem;min-width:0;border-right:1px solid #403653}
+.ops-stat:last-child{border-right:0}
+.ops-stat-label{display:block;font:700 .65rem/1.5 Consolas,'Courier New',monospace;color:var(--ops-cyan);letter-spacing:.08em}
+.ops-stat strong{display:block;margin:.5rem 0 .1rem;font:700 clamp(.9rem,1.3vw,1.2rem)/1.2 Consolas,'Courier New',monospace;color:#fff;overflow-wrap:anywhere}
+.ops-stat small{display:block;font-size:.75rem;color:#cbbfdc}
+.ops-dashboard-footer{justify-content:space-between;background:#171425;flex-wrap:wrap}
+.ops-dashboard-footer a{color:var(--ops-cyan);text-decoration:underline;text-underline-offset:3px}
+.ops-dashboard-footer a:hover{color:white}
+.ops-skills .skill-category{padding:1.2rem;border:1px solid #55416e;border-radius:9px;background:linear-gradient(155deg,#201a32,#131321);box-shadow:inset 3px 0 #8454b0;transition:border-color .2s,transform .2s}
+.ops-skills .skill-category:hover{border-color:#a77be0;transform:translateY(-3px)}
+.ops-skills .skill-category h3{font-family:Consolas,'Courier New',monospace;font-size:1rem;color:#f4eaff}
+.ops-skills .skill-category h3:before{content:"> ";color:var(--ops-cyan)}
+.ops-skills .pill{font-size:.86rem;border-color:#5b4b72;background:#29203b;border-radius:5px}
+.experience-entry{border-left:2px solid #8454b0;padding-left:1.25rem!important;background:linear-gradient(90deg,#7a4f9920,transparent 70%)}
+.experience-entry strong{color:#f4eaff}
+.project{border-color:#57446c;background:linear-gradient(145deg,#201a30,#151324)}
+.project-mark{font-family:Consolas,'Courier New',monospace;color:var(--ops-cyan)}
+.ops-terminal .terminal-panel{border-color:#85dce777;box-shadow:0 20px 60px #0007}
+.ops-terminal .terminal-panel:before{content:"●  ●  ●   marios@portfolio:~";display:block;padding:0 0 .7rem;margin-bottom:.7rem;border-bottom:1px solid #4b3b63;color:var(--ops-cyan);font:700 .8rem Consolas,'Courier New',monospace}
+@media(max-width:1050px){.hero.hero-with-photo{grid-template-columns:minmax(0,1fr) minmax(220px,.75fr)}.ops-dashboard-grid{grid-template-columns:1fr}.ops-stat{border-right:0;border-bottom:1px solid #403653;padding:.75rem 1rem}.ops-stat:last-child{border-bottom:0}.ops-stat strong{margin:.2rem 0}}
+@media(max-width:800px){.hero.hero-with-photo{grid-template-columns:1fr}.hero .portrait{max-width:380px}.ops-dashboard-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ops-stat{border-bottom:0;border-right:1px solid #403653}.ops-stat:last-child{border-right:0}}
+@media(max-width:580px){.ops-dashboard-grid{grid-template-columns:1fr}.ops-stat{border-right:0;border-bottom:1px solid #403653}.ops-stat:last-child{border-bottom:0}.ops-head-right{display:none}.ops-dashboard-footer{align-items:flex-start}.ops-skills .skill-category{padding:1rem}}
+@media(prefers-reduced-motion:reduce){.ops-skills .skill-category{transition:none}.ops-skills .skill-category:hover{transform:none}}
