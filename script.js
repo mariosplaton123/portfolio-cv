@@ -1,1 +1,25 @@
-document.querySelector('.menu-toggle')?.addEventListener('click',function(){const nav=document.querySelector('#site-nav');const open=nav.classList.toggle('open');this.setAttribute('aria-expanded',String(open));});document.querySelectorAll('#site-nav a').forEach(a=>a.addEventListener('click',()=>{document.querySelector('#site-nav')?.classList.remove('open');document.querySelector('.menu-toggle')?.setAttribute('aria-expanded','false')}));document.querySelector('#contact-form')?.addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.currentTarget);const subject=encodeURIComponent(data.get('subject')||'Portfolio contact');const body=encodeURIComponent(`${data.get('message')}\n\nFrom: ${data.get('name')} (${data.get('email')})`);window.location.href=`mailto:contact@mariosplaton.gr?subject=${subject}&body=${body}`;});
+const toggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('#site-nav');
+if(toggle&&nav){
+  toggle.addEventListener('click',()=>{
+    const open=nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',String(open));
+  });
+  nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }));
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&nav.classList.contains('open')){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.focus();
+    }
+  });
+}
+const observer=('IntersectionObserver' in window)&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ?new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+  }),{threshold:0.08}) : null;
+if(observer)document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
