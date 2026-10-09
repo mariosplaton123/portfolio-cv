@@ -1,0 +1,15 @@
+Options -Indexes
+DirectoryIndex index.html
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(?:wp-admin|wp-includes|wp-content|xmlrpc\.php)(?:/|$) - [F,L,NC]
+RewriteRule (?i)(?:^|/)(?:\.env(?:\..*)?|wp-config\.php|debug\.log|error_log|\.git|\.svn)(?:/|$) - [F,L]
+RewriteRule (?i)\.(?:sql|sqlite|bak|backup|old|zip|tar|gz|7z|log|ini)$ - [F,L]
+</IfModule>
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "DENY"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+Header always set Content-Security-Policy "default-src 'none'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'none'; upgrade-insecure-requests"
+</IfModule>
