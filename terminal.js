@@ -46,5 +46,5 @@ if(!Object.prototype.hasOwnProperty.call(t,key)||['welcome','unknown','opening',
 write(t[key]);if(key==='homelab')link(t.link,links.homelab);if(key==='contact'){link(t.link,links.contact);link('mariosplaton1@gmail.com','mailto:mariosplaton1@gmail.com');}if(key==='cv')link(t.link,links.cv);if(key==='projects')link(t.link,links.projects);}
 write(t.welcome);form.addEventListener('submit',e=>{e.preventDefault();const raw=input.value;input.value='';run(raw);});
 input.addEventListener('keydown',e=>{if(e.key==='ArrowUp'||e.key==='ArrowDown'){if(!history.length)return;e.preventDefault();cursor=Math.max(0,Math.min(history.length,cursor+(e.key==='ArrowUp'?-1:1)));input.value=history[cursor]||'';input.setSelectionRange(input.value.length,input.value.length);}
-if(e.key==='Tab'){const typed=input.value.trim().toLowerCase();if(!typed||typed.includes(' '))return;const matches=cmds.filter(x=>x.startsWith(typed));if(matches.length===1){e.preventDefault();input.value=matches[0]+(matches[0]==='open'?' ':'');}}});
+if(e.key==='Tab'&&!e.shiftKey){const typed=input.value.trim().toLowerCase();if(!typed||typed.includes(' '))return;const matches=cmds.filter(x=>x.startsWith(typed));if(matches.length===1&&typed!==matches[0]){e.preventDefault();input.value=matches[0]+(matches[0]==='open'?' ':'');}}});
 })();

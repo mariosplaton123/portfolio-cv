@@ -19,6 +19,12 @@ Push to `main` after reviewing a pull request. GitHub Pages serves the site from
 
 Keep `sitemap.xml`, `robots.txt`, canonical URLs, and language alternates in sync when adding pages. Social previews use the absolute URL `https://cv.mariosplaton.gr/assets/social-preview.jpg`.
 
+## Checks
+
+Run `python generate_sitemap.py https://cv.mariosplaton.gr` after adding a page, then `python tests/check_site.py` to check local links, fragments, language pairs, sitemap coverage and PDF signatures. No third-party packages are required.
+
+For browser verification, check English and Greek pages at desktop and mobile widths. Test the mobile menu (including Escape), home-lab language links, CV language links, and terminal commands. With `he` entered, Tab should complete `help`; the next Tab must move to Run. Shift+Tab must always move backward.
+
 ## Security
 
 GitHub Pages ignores `.htaccess`. Never commit credentials, secrets, or private documents. Review `assets/cv.pdf` for sensitive personal information before publishing.
