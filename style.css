@@ -163,3 +163,14 @@ footer{padding:2.5rem max(5vw,calc((100vw - 1180px)/2));background:#0d0d15}
 @media(max-width:850px){.hero.hero-with-photo{grid-template-columns:minmax(0,1fr) minmax(150px,.55fr);gap:1.5rem}.ops-dashboard-grid{grid-template-columns:1fr}.ops-stat{border-right:0;border-bottom:1px solid var(--border)}.skills-section .skills-expanded,#homelab .project-grid{grid-template-columns:1fr}.hero .portrait{max-width:260px}}
 @media(max-width:600px){.hero.hero-with-photo{grid-template-columns:1fr;padding:2.5rem 20px}.hero .portrait{max-width:200px;aspect-ratio:1;justify-self:start}.ops-dashboard-grid{grid-template-columns:1fr}.section{padding:2.8rem 20px}.experience-timeline>li{padding:1rem!important}#projects .project{display:flex}#projects .project-image{height:180px;min-height:0}.terminal-shortcuts button{min-height:44px}.terminal-output{height:230px}}
 @media(prefers-reduced-motion:reduce){.button:hover,.project:hover,.pill:hover{transform:none}}
+
+/* Constrained detail pages must not inherit viewport-wide section gutters. */
+.section.project-detail,.section.contact-page{width:100%;max-width:1080px;margin-inline:auto;padding-inline:clamp(20px,4vw,48px);padding-block:clamp(32px,5vw,72px)}
+.section.project-detail h1{font-size:clamp(2rem,4.5vw,3.75rem);line-height:1.12;overflow-wrap:normal}
+.project-detail .lead{max-width:72ch;font-size:clamp(1rem,1.8vw,1.25rem);line-height:1.65}
+.project-detail .detail-image{width:100%;height:auto;max-height:400px;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin:1.5rem 0}
+.project-detail .detail-points{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.project-detail .detail-points article{min-width:0;padding:1.25rem;border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:10px;background:var(--panel)}
+.project-detail .detail-points h2{font-size:1.15rem;line-height:1.35;margin:0 0 .65rem;letter-spacing:-.01em;overflow-wrap:normal}
+.project-detail .detail-points p{font-size:.96rem;line-height:1.6;overflow-wrap:break-word}
+@media(max-width:700px){.project-detail .detail-points{grid-template-columns:1fr}.section.project-detail,.section.contact-page{padding-inline:20px}.project-detail .detail-image{max-height:280px}}
