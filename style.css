@@ -190,9 +190,9 @@ footer{padding:2.5rem max(5vw,calc((100vw - 1180px)/2));background:#0d0d15}
 @media(max-width:900px){.lab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.lab-grid{grid-template-columns:1fr}.lab-hero h1{font-size:2.25rem}}
 
-/* Shared branding: preserve the 3:1 artwork and show its square emblem. */
-.topbar a.logo{display:block;position:relative;flex:0 0 64px;width:64px;height:64px;overflow:hidden;border-radius:8px;background:#100d18}
-.topbar a.logo .brand-image{display:block;position:static;width:100%;height:100%;max-width:none;object-fit:cover;object-position:left center;padding:0;margin:0;border:0;box-shadow:none}
+/* Shared branding: show the complete 3:1 artwork without cropping. */
+.topbar a.logo{display:block;position:relative;flex:0 0 192px;width:192px;height:64px;overflow:hidden;border-radius:8px;background:#100d18}
+.topbar a.logo .brand-image{display:block;position:static;width:100%;height:100%;max-width:none;object-fit:contain;object-position:center;padding:0;margin:0;border:0;box-shadow:none}
 .portfolio-brand-banner{display:none}
 .menu-toggle{border-radius:8px}
 .topbar nav{gap:clamp(.75rem,1.8vw,1.65rem)}
@@ -200,7 +200,7 @@ footer{padding:2.5rem max(5vw,calc((100vw - 1180px)/2));background:#0d0d15}
 .contact-page h1{font-size:clamp(2.25rem,5vw,4rem);line-height:1.12;margin:.5rem 0 1.5rem}
 .project-detail .detail-image{object-fit:contain}
 @media(max-width:800px){
-  .topbar a.logo{flex-basis:52px;width:52px;height:52px}
+  .topbar a.logo{flex-basis:156px;width:156px;height:52px}
   .topbar nav{gap:.35rem}
   .contact-banner{width:calc(100% - 40px);height:160px;margin-top:1.5rem}
 }
