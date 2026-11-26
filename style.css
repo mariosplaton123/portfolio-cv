@@ -90,3 +90,5 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;bac
 @media(max-width:800px){.hero.hero-with-photo{grid-template-columns:1fr}.hero .portrait{max-width:380px}.ops-dashboard-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ops-stat{border-bottom:0;border-right:1px solid #403653}.ops-stat:last-child{border-right:0}}
 @media(max-width:580px){.ops-dashboard-grid{grid-template-columns:1fr}.ops-stat{border-right:0;border-bottom:1px solid #403653}.ops-stat:last-child{border-bottom:0}.ops-head-right{display:none}.ops-dashboard-footer{align-items:flex-start}.ops-skills .skill-category{padding:1rem}}
 @media(prefers-reduced-motion:reduce){.ops-skills .skill-category{transition:none}.ops-skills .skill-category:hover{transform:none}}
+
+.terminal-shortcuts{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}.terminal-shortcuts button{font:inherit;font-size:.85rem;border:1px solid #9d7bc6;background:#241634;color:#f4eaff;padding:.45rem .75rem;border-radius:6px;cursor:pointer}.terminal-shortcuts button:hover,.terminal-shortcuts button:focus-visible{background:#59358a;color:white;outline:2px solid #c9a7ff;outline-offset:2px}
